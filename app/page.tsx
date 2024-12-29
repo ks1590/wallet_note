@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { ChartComponent } from '@/components/ui/pieChart';
+import { BarChartComponent } from '@/components/ui/barChart';
 
 export default function Home() {
   return (
@@ -8,6 +9,9 @@ export default function Home() {
         <ChartComponent />
         <ChartComponent />
         <ChartComponent />
+      </main>
+      <main className='flex gap-8 row-start-3 justify-center items-center w-full bg-main p-16 border-2 border-border shadow-shadow rounded-xl'>
+        <BarChartComponent />
       </main>
       <Button>Default</Button>
       <footer className='row-start-3 flex gap-6 flex-wrap items-center justify-center'></footer>
