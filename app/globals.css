@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --main: #88aaee;
+  --main: #a3bced;
   --overlay: rgba(
     0,
     0,
@@ -42,6 +42,12 @@
   --ring-offset: #000;
 
   --shadow: var(--box-shadow-x) var(--box-shadow-y) 0px 0px var(--border);
+}
+
+.bg-grid {
+  background-image: linear-gradient(to right, #ccc 1px, transparent 1px),
+    linear-gradient(to bottom, #ccc 1px, transparent 1px);
+  background-size: 30px 30px;
 }
 
 @layer base {
