@@ -3,6 +3,7 @@ import { ChartComponent } from '@/components/ui/pieChart';
 import { BarChartComponent } from '@/components/ui/barChart';
 import DataTable from '@/components/ui/dataTable';
 import Header from '@/components/header';
+import { AreaChartComponent } from '@/components/ui/areaChart';
 
 export default function Home() {
   return (
@@ -20,6 +21,11 @@ export default function Home() {
           </div>
           <div className='grow bg-secondaryGreen p-8 border-2 border-border shadow-shadow rounded-xl'>
             <DataTable />
+          </div>
+        </main>
+        <main className='grid grid-cols-1 gap-8 justify-center items-center w-full '>
+          <div className='grow bg-secondaryPurple p-8 border-2 border-border shadow-shadow rounded-xl'>
+            <AreaChartComponent />
           </div>
         </main>
         <Button>Default</Button>
