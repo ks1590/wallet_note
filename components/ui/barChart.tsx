@@ -45,7 +45,7 @@ const chartConfig = {
 
 export function BarChartComponent() {
   return (
-    <Card className='flex flex-col text-mtext border-2 border-border shadow-shadow bg-white w-full'>
+    <Card className='flex flex-col text-mtext border-2 border-border bg-white w-full'>
       <CardHeader>
         <CardTitle>Bar Chart - Stacked + Legend</CardTitle>
         <CardDescription>January - June 2024</CardDescription>

@@ -12,6 +12,9 @@ export default {
     extend: {
       colors: {
         main: 'var(--main)',
+        primary: 'var(--primary)',
+        secondaryGreen: 'var(--secondary-green)',
+        secondaryPurple: 'var(--secondary-purple)',
         overlay: 'var(--overlay)',
         bg: 'var(--bg)',
         bw: 'var(--bw)',

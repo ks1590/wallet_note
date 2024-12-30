@@ -196,7 +196,7 @@ export default function DataTable() {
   });
 
   return (
-    <div className='w-full font-base text-mtext border-2 border-border shadow-shadow bg-white rounded-xl p-10'>
+    <div className='w-full font-base text-mtext border-2 border-border bg-white rounded-xl p-10'>
       <div className='flex items-center py-4'>
         <Input
           placeholder='Filter emails...'

@@ -4,6 +4,9 @@
 
 :root {
   --main: #a3bced;
+  --primary: #ffdc58;
+  --secondary-green: #c2e688;
+  --secondary-purple: #b19ee5;
   --overlay: rgba(
     0,
     0,

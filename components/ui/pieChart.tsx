@@ -56,7 +56,7 @@ export function ChartComponent() {
   }, []);
 
   return (
-    <Card className='flex flex-col text-mtext border-2 border-border shadow-shadow bg-white'>
+    <Card className='flex flex-col text-mtext border-2 border-border bg-white'>
       <CardHeader className='items-center pb-0'>
         <CardTitle>Pie Chart - Donut with Text</CardTitle>
         <CardDescription>January - June 2024</CardDescription>
