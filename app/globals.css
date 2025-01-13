@@ -19,6 +19,7 @@
   --blank: #000; /* blank black and white */
   --border: #000;
   --text: #000;
+  --textWhite: #fff;
   --mtext: #000; /* text that is placed on background with main color e.g. text color of default button */
   --ring: #000;
   --ring-offset: #fff;
