@@ -3,7 +3,7 @@
 import { createClientForServer } from '@/lib/supabase/server';
 import { redirect } from 'next/navigation';
 
-type Provider = 'github';
+type Provider = 'google' | 'github';
 
 const signInWith = (provider: Provider) => async () => {
   const supabase = await createClientForServer();
@@ -29,6 +29,7 @@ const signInWith = (provider: Provider) => async () => {
   }
 };
 
+const signinWithGoogle = signInWith('google');
 const signinWithGithub = signInWith('github');
 
 const signOut = async () => {
@@ -36,4 +37,4 @@ const signOut = async () => {
   await supabase.auth.signOut();
 };
 
-export { signOut, signinWithGithub };
+export { signOut, signinWithGoogle, signinWithGithub };

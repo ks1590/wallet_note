@@ -1,5 +1,5 @@
 'use client';
-import { signinWithGithub } from '@/lib/actions';
+import { signinWithGoogle, signinWithGithub } from '@/lib/actions';
 import React from 'react';
 import { Card, CardContent, CardFooter } from '../ui/card';
 import { Input } from '../ui/input';
@@ -14,6 +14,9 @@ const AuthForm = () => {
           <form className='flex flex-col gap-2'>
             <Button variant='noShadow' formAction={signinWithGithub}>
               Githubでログイン
+            </Button>
+            <Button variant='noShadow' formAction={signinWithGoogle}>
+              Googleでログイン
             </Button>
           </form>
           <div className='relative my-7'>
