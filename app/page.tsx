@@ -1,24 +1,18 @@
-import { ChartComponent } from '@/components/ui/pieChart';
-import { BarChartComponent } from '@/components/ui/barChart';
+import { redirect } from 'next/navigation';
 import DataTable from '@/components/ui/dataTable';
 import Header from '@/components/header';
-import { AreaChartComponent } from '@/components/ui/areaChart';
+import { ChartComponent } from '@/components/charts/pie-chart';
+import { BarChartComponent } from '@/components/charts/bar-chart';
+import { AreaChartComponent } from '@/components/charts/area-chart';
 import { createClientForServer } from '@/lib/supabase/server';
-import Link from 'next/link';
 
 export default async function Home() {
   const supabase = await createClientForServer();
   const session = await supabase.auth.getUser();
 
-  if (!session.data.user)
-    return (
-      <div className='flex flex-col items-center justify-center h-screen gap-4'>
-        <h1 className='text-4xl font-bold'>Not Authenticated</h1>
-        <Link className='btn' href='/auth'>
-          Sign in
-        </Link>
-      </div>
-    );
+  if (!session.data.user) {
+    redirect('/auth');
+  }
 
   const {
     data: {
