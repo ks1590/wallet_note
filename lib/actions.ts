@@ -37,4 +37,41 @@ const signOut = async () => {
   await supabase.auth.signOut();
 };
 
+export async function getPayments() {
+  const supabase = await createClientForServer();
+
+  // 認証済みユーザーを取得
+  const {
+    data: { user },
+    error: userError,
+  } = await supabase.auth.getUser();
+
+  if (userError) {
+    console.error('Error fetching user:', userError);
+    throw userError;
+  }
+
+  if (!user) {
+    console.warn('No authenticated user found.');
+    return [];
+  }
+
+  console.log('Authenticated user:', user);
+
+  // ユーザーに関連するデータを取得
+  const { data, error } = await supabase
+    .from('payments')
+    .select('*')
+    .eq('user_id', user.id); // user_idが認証済みユーザーのIDと一致するデータを取得
+  console.log('🚀 ~ getPayments ~ user.id:', user.id);
+
+  if (error) {
+    console.error('Error fetching payments:', error);
+    throw error;
+  }
+
+  console.log('🚀 ~ getPayments ~ data:', data);
+  return data;
+}
+
 export { signOut, signinWithGoogle, signinWithGithub };

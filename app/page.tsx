@@ -5,6 +5,16 @@ import { ChartComponent } from '@/components/charts/pie-chart';
 import { BarChartComponent } from '@/components/charts/bar-chart';
 import { AreaChartComponent } from '@/components/charts/area-chart';
 import { createClientForServer } from '@/lib/supabase/server';
+import { getPayments } from '@/lib/actions';
+
+async function fetchPayments() {
+  try {
+    const payments = await getPayments();
+    console.log('Payments:', payments);
+  } catch (error) {
+    console.error('Failed to fetch payments:', error);
+  }
+}
 
 export default async function Home() {
   const supabase = await createClientForServer();
@@ -25,6 +35,10 @@ export default async function Home() {
   const userName = user_name ? `@${user_name}` : 'User Name Not Set';
 
   console.log(session);
+
+  const payments = await fetchPayments();
+  console.log('🚀 ~ Home ~ payments:', payments);
+
   return (
     <div>
       <Header />
